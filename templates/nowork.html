@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}No work | SoCoLab Experiment 2023{% endblock %}
+{% block content %}
+
+<div class="image">
+    <h2>Task {{ current_work_units }}/{{ total_work_units }}</h2>
+    <p>What a nice view!</p>
+    
+    <img src="{{url_for ('static', filename='assets/nowork/'+ task_id|string + '.png')}}" class="image">
+    <br><br>
+    <form method='POST'>
+        <button class='next' type="submit" name="nowork_submit" class="button is-primary"
+            value="{{task_id}}">Proceed</button>
+    </form>
+    <br>
+</div>
+
+{% endblock %}

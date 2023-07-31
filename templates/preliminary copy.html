@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Activity choice | SoCoLab Experiment 2023{% endblock %}
+
+{% block content %}
+
+     <h1>Preliminary results</h1>
+
+    <p>You have finished the first "year"!</p>
+     <p>This year you have <b class="black-bold">earned</b> {{total_earned_income}} € </p>
+     <p>Your total <b class="black-bold">gross</b> income this year was: {{total_gross_income}} €</p>
+     <p>Your current total <b class="black-bold">net</b> income: {{total_net_income}} €</p>
+     <p>Your current total <b class="black-bold">tax</b> amount: {{total_tax_amount}} €</p>
+    <br>
+     <p>Now there comes one more round!</p>
+     <p><a href="/model2">
+        <button class="next" type="button">Proceed</button>
+    </a> 
+    </p>
+
+{% endblock %}

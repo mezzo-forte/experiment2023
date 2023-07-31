@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Set task id{% endblock %}
+{% block content %}
+
+<h1 class="title">Set task id</h1>
+
+<h2>Your current task_id is: {{task_id}}</h2>
+
+<form method="POST">
+    <p>Choose:</p>
+    <button class="red" name="set_task" type="submit" value="{{task1}}">{{task1}}</button>
+    <button class="red" name="set_task" type="submit" value="{{task2}}">{{task2}}</button>
+    <button class="red" name="set_task" type="submit" value="{{task3}}">{{task3}}</button>
+</form>
+
+{% endblock %}

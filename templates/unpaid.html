@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Unpaid work | SoCoLab Experiment 2023{% endblock %}
+{% block content %}
+
+<h1>Unpaid work</h1>
+<h2>Task {{ current_work_units }}/{{ total_work_units }}</h2>
+
+<div class="container is-fluid">
+<p><b class="black-bold">What would you prefer to do this month?</b></p>
+    <form method="POST">
+        <div>
+          <label>
+            <input type="radio" name="unpaid_choice" required value="{{task1}}" />
+            {{task1_text}}
+          </label>
+        </div>
+        <div>
+            <br>
+          <label>
+            <input type="radio" name="unpaid_choice" value="{{task2}}" />
+            {{task2_text}}
+          </label>
+        </div>
+        <br />
+        <button class= "next" type="submit">Submit</button>
+      </form>
+</div>
+
+
+{% endblock %}

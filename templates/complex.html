@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Complex paid work | SoCoLab Experiment 2023{% endblock %}
+{% block content %}
+
+<h1>Complex paid work</h1>
+<p><b>Task {{ current_work_units }}/{{ total_work_units }}</b></p>
+
+    <form method='POST'>
+        
+        <p> How much is the following: </p>
+        
+        <div class="field">
+            <label class="label">{{ task_content }} = ?</label>
+      
+        </div>
+        <br>
+        <div class="field has-addons">
+            <div class="field-body">
+                <div class="control">
+                    <input class="input" autocomplete="off" type="text" placeholder="Answer" name="answer_given" required>
+                </div>
+                <br>
+                <div class="control">
+                    <button class='next' type="submit" name="complex" class="button is-primary"
+            value="{{task_id}}">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}

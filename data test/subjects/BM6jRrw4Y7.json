@@ -1,0 +1,36 @@
+{
+  "Subject": "BM6jRrw4Y7",
+  "Task_id": 1,
+  "Correct": "Correct!",
+  "Group_number_for_model": 8,
+  "Income1": {
+    "Earned_income": 2500,
+    "Gross_income": 2750.0,
+    "Total_earned_income": 2500,
+    "Total_gross_income": 2750.0,
+    "Total_net_income": 2750.0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 2500
+  },
+  "Income2": {
+    "Earned_income": 0,
+    "Gross_income": 0,
+    "Total_earned_income": 0,
+    "Total_gross_income": 0,
+    "Total_net_income": 0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Last_task": "Simple",
+  "Model": "WS",
+  "Total_income": {
+    "Total_earned_income": 0,
+    "Total_gross_income": 0,
+    "Total_net_income": 0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Active_part": 1,
+  "Simple_part1": 1,
+  "Simple_part_1_0": "4"
+}

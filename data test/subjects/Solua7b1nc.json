@@ -1,0 +1,52 @@
+{
+  "Subject": "Solua7b1nc",
+  "Task_id": 5,
+  "Correct": "",
+  "Group_number_for_model": 11,
+  "Income1": {
+    "Earned_income": 0,
+    "Gross_income": 0.0,
+    "Total_earned_income": 0,
+    "Total_gross_income": 0.0,
+    "Total_net_income": 0.0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Income2": {
+    "Earned_income": 0,
+    "Gross_income": 0.0,
+    "Total_earned_income": 0,
+    "Total_gross_income": 0.0,
+    "Total_net_income": 0.0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Last_task": "Nowork",
+  "Model": "WS",
+  "Total_income": {
+    "Total_earned_income": 0,
+    "Total_gross_income": 0,
+    "Total_net_income": 0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Active_part": 2,
+  "Nowork_part1": 11,
+  "Nowork_part_1_0": 1,
+  "Nowork_part_1_1": 1,
+  "Nowork_part_1_2": 1,
+  "Nowork_part_1_3": 1,
+  "Nowork_part_1_4": 1,
+  "Nowork_part_1_5": 1,
+  "Nowork_part_1_6": 1,
+  "Nowork_part_1_7": 1,
+  "Nowork_part_1_8": 1,
+  "Nowork_part_1_9": 1,
+  "Nowork_part_1_10": 1,
+  "Nowork_part2": 5,
+  "Nowork_part_2_0": 1,
+  "Nowork_part_2_1": 1,
+  "Nowork_part_2_2": 1,
+  "Nowork_part_2_3": 1,
+  "Nowork_part_2_4": 1
+}

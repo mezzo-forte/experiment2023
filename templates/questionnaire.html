@@ -1,0 +1,612 @@
+{% extends "base.html" %}
+{% block title %}Questionnaire {% endblock %}
+{% block content %}
+
+<h1>Questionnaire</h1>
+
+<h2>Congratulations! You've reached the final step!</h2>
+
+
+  <p>
+    Dear respondent, </p>
+
+<p>Thank you for participating in our survey! This survey aims to collect perspectives and opinions on unconditional basic income and wage subsidy in order to better understand public awareness and attitudes towards this policy.</p>
+    
+<p>Your personal information will be strictly confidential and used solely for the purposes of this survey. All data will be <b class="black-bold">anonymized</b> and will not be associated with your identity.</p> 
+    
+<p>If you have any questions or require further information, please feel free to contact us. Thank you once again for your participation!</p>
+
+    
+   <!-- Part 1 Personal Information -->
+
+    <h2>Part 1 Personal Information</h2>
+  <form method="POST">
+    <div>
+      <div>
+      <p>
+        <b class="black-bold">
+          1. How old are you?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q1" value="Under 18">
+        <label>Under 18</label>
+      </div>
+      <div>
+        <input type="radio" name="Q1" value="18-24">
+        <label>18-24</label>
+      </div>
+      <div>
+        <input type="radio" name="Q1" value="25-34">
+        <label>25-34</label>
+      </div>
+      <div>
+        <input type="radio" name="Q1" value="35-44">
+        <label>35-44</label>
+      </div>
+      <div>
+        <input type="radio" name="Q1" value="45-54">
+        <label>45-54</label>
+      </div>
+      <div>
+        <input type="radio" name="Q1" value="55 and above">
+        <label>55 and above</label>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        <b class="black-bold">
+          2. Where do you live?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q2" value="Urban">
+        <label>Urban</label>
+      </div>
+      <div>
+        <input type="radio" name="Q2" value="Rural">
+        <label>Rural</label>
+      </div>
+      <div>
+        <input type="radio" name="Q2" value="Other">
+        <label>Other</label>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        <b class="black-bold">
+          3. What is your highest academic degree?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q3" value="Bachelor">
+        <label>Bachelor</label>
+      </div>
+      <div>
+        <input type="radio" name="Q3" value="Master">
+        <label>Master</label>
+      </div>
+      <div>
+        <input type="radio" name="Q3" value="PhD/Doctorate">
+        <label>PhD/Doctorate</label>
+      </div>
+      <div>
+        <input type="radio" name="Q3" value="Other">
+        <label>Other</label>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        <b class="black-bold">
+          4. Where do you come from?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q4" value="Europe">
+        <label>Europe</label>
+      </div>
+      <div>
+        <input type="radio" name="Q4" value="America">
+        <label>America</label>
+      </div>
+      <div>
+        <input type="radio" name="Q4" value="Asia">
+        <label>Asia</label>
+      </div>
+      <div>
+        <input type="radio" name="Q4" value="Africa">
+        <label>Africa</label>
+      </div>
+      <div>
+        <input type="radio" name="Q4" value="Other">
+        <label>Other</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          5. What is your highest academic degree?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q5" value="Bachelor">
+        <label>Bachelor</label>
+      </div>
+      <div>
+        <input type="radio" name="Q5" value="Master">
+        <label>Master</label>
+      </div>
+      <div>
+        <input type="radio" name="Q5" value="PhD/Doctorate">
+        <label>PhD/Doctorate</label>
+      </div>
+      <div>
+        <input type="radio" name="Q5" value="Other">
+        <label>Other</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          6. What is your monthly net income?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q6" value="<=500">
+        <label>&#8804;500</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=1000">
+        <label>&#8804;1000</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=1500">
+        <label>&#8804;1500</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=2000">
+        <label>&#8804;2000</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=2500">
+        <label>&#8804;2500</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=3000">
+        <label>&#8804;3000</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=3500">
+        <label>&#8804;3500</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="<=4000">
+        <label>&#8804;4000</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="More than 4000">
+        <label>More than 4000</label>
+      </div>
+      <div>
+        <input type="radio" name="Q6" value="Prefer not to say">
+        <label>Prefer not to say</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          7. Do you like math?
+        </b>
+      </p>
+      <div>
+        <input type="radio" name="Q7" value="Yes">
+        <label>Yes</label>
+      </div>
+      <div>
+        <input type="radio" name="Q7" value="No">
+        <label>No</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          8. If you choose 'work', why?
+        </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q8" value="I like to solve mathematical puzzles">
+        <label>I like to solve mathematical puzzles</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q8" value="I want to earn more money">
+        <label>I want to earn more money</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q8" value="No reason">
+        <label>No reason</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q8" value="I didn't choose 'work'">
+        <label>I didn't choose 'work'</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          9. If you choose 'unpaid work', why?
+        </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q9" value="I don't like math">
+        <label>I don't like math</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q9" value="I don't want to work for money">
+        <label>I don't want to work for money</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q9" value="No reason">
+        <label>No reason</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q9" value="I didn't choose 'unpaid work'">
+        <label>I didn't choose 'unpaid work'</label>
+      </div>
+    </div>
+    
+    <div>
+      <p>
+        <b class="black-bold">
+          10. If you choose 'not working', why?
+        </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q10" value="I don't want to work">
+        <label>I don't want to work</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q10" value="I don't like math">
+        <label>I don't like math</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q10" value="I want to see the picture">
+        <label>I want to see the picture</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q10" value="No reason">
+        <label>No reason</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q10" value="I didn't choose 'not working'">
+        <label>I didn't choose 'not working'</label>
+      </div>
+    </div>
+
+    {% if model == "UBI" %}
+    <h2>Part 2 Understanding UBI (Universal Basic Income)</h2>
+    <p><b class="black-bold">
+      1. What do you think UBI is? </b>
+    </p>
+    <div>
+      <input type="radio" name="Q11" value="A fixed amount of cash given to every citizen">
+      <label>A fixed amount of cash given to every citizen</label>
+    </div>
+    <div>
+      <input type="radio" name="Q11" value="Welfare benefits given to specific groups of people">
+      <label>Welfare benefits given to specific groups of people</label>
+    </div>
+    <div>
+      <input type="radio" name="Q11" value="Other">
+      <label>Other</label>
+      <input type="text" name="Q11_other" placeholder="Please specify" size="50">
+    </div>
+  
+    <p><b class="black-bold">
+      2. What do you think is the purpose of UBI? </b>
+    </p>
+    <div>
+      <input type="checkbox" name="Q12" value="Reducing poverty and social inequality">
+      <label>Reducing poverty and social inequality</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q12" value="Stimulating economic growth and innovation">
+      <label>Stimulating economic growth and innovation</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q12" value="Providing social security and welfare">
+      <label>Providing social security and welfare</label>
+    </div>
+  
+    <p><b class="black-bold">
+      3. What do you think should be the source of funds for UBI? </b>
+    </p>
+    <div>
+      <input type="checkbox" name="Q13" value="government (tax increase)">
+      <label>government (tax increase)</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q13" value="budget redistribution">
+      <label>budget redistribution</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q13" value="utilization of public resources (for example, mineral resources, etc.)">
+      <label>utilization of public resources (for example, mineral resources, etc.)</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q13" value="donations and charitable organizations">
+      <label>donations and charitable organizations</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q13" value="Other">
+      <label>Other</label>
+      <input type="text" name="Q13" placeholder="Please specify" size="50" >
+    </div>
+  
+    <p><b class="black-bold">
+      4. Do you support UBI? </b>
+    </p>
+    <div>
+      <input type="radio" name="Q14" value="Yes">
+      <label>Yes</label>
+    </div>
+    <div>
+      <input type="radio" name="Q14" value="No">
+      <label>No</label>
+    </div>
+  
+  {% elif model == "WS" %}
+    <h2>Part 2 Understanding WS (Wage Subsidy)</h2>
+    <p><b class="black-bold">
+      2. What do you think is the purpose of WS? </b>
+    </p>
+    <div>
+      <input type="checkbox" name="Q15" value="Providing social security and welfare">
+      <label>Providing social security and welfare</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q15" value="Promote employment and economic growth">
+      <label>Promote employment and economic growth</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q15" value="Reduce the economic burden of enterprises">
+      <label>Reduce the economic burden of enterprises</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q15" value="Increase the income of employees">
+      <label>Increase the income of employees</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q15" value="Other">
+      <label>Other</label>
+      <input type="text" name="Q15" placeholder="Please specify" size="50" >
+    </div>
+  
+    <p><b class="black-bold">
+      3. What do you think should be the source of funds for WS? </b>
+    </p>
+    <div>
+      <input type="checkbox" name="Q16" value="government (tax increase)">
+      <label>government (tax increase)</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q16" value="budget redistribution">
+      <label>budget redistribution</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q16" value="utilization of public resources (e.g., mineral resources, etc.)">
+      <label>utilization of public resources (e.g., mineral resources, etc.)</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q16" value="donations and charitable organizations">
+      <label>donations and charitable organizations</label>
+    </div>
+    <div>
+      <input type="checkbox" name="Q16" value="Other">
+      <label>Other</label>
+      <input type="text" name="Q16" placeholder="Please specify" size="50" >
+    </div>
+  
+    <p><b class="black-bold">
+      4. Do you support WS? </b>
+    </p>
+    <div>
+      <input type="radio" name="Q17" value="Yes">
+      <label>Yes</label>
+    </div>
+    <div>
+      <input type="radio" name="Q17" value="No">
+      <label>No</label>
+    </div>
+
+    {% elif model == "UBIWS" %}
+    <h2>Part 2 Understanding UBI&WS (Universal Basic Income and Wage Subsidy)</h2>
+      <p><b class="black-bold">
+        1. What do you think UBI is? </b>
+      </p>
+      <div>
+        <input type="radio" name="Q18" value="A fixed amount of cash given to every citizen">
+        <label>A fixed amount of cash given to every citizen</label>
+      </div>
+      <div>
+        <input type="radio" name="Q18" value="Welfare benefits given to specific groups of people">
+        <label>Welfare benefits given to specific groups of people</label>
+      </div>
+      <div>
+        <input type="radio" name="Q18" value="Other">
+        <label>Other</label>
+        <input type="text" name="Q18_other" placeholder="Please specify" size="50" >
+      </div>
+  
+      <p><b class="black-bold">
+        2. What do you think is the purpose of UBI? </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q20" value="Reducing poverty and social inequality">
+        <label>Reducing poverty and social inequality</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q20" value="Stimulating economic growth and innovation">
+        <label>Stimulating economic growth and innovation</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q20" value="Providing social security and welfare">
+        <label>Providing social security and welfare</label>
+      </div>
+  
+      <p><b class="black-bold">
+        3. What do you think WS is? </b>
+      </p>
+      <div>
+        <input type="radio" name="Q21" value="The government gives employers financial subsidies to pay employees' wages">
+        <label>The government gives employers financial subsidies to pay employees' wages</label>
+      </div>
+      <div>
+        <input type="radio" name="Q21" value="The government gives subsidies to employees to increase their salary income">
+        <label>The government gives subsidies to employees to increase their salary income</label>
+      </div>
+      <div>
+        <input type="radio" name="Q21" value="Other">
+        <label>Other</label>
+        <input type="text" name="Q21_other" placeholder="Please specify" size="50" >
+      </div>
+  
+      <p><b class="black-bold">
+        4. What do you think is the purpose of WS? </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q22" value="Providing social security and welfare">
+        <label>Providing social security and welfare</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q22" value="Promote employment and economic growth">
+        <label>Promote employment and economic growth</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q22" value="Reduce the economic burden of enterprises">
+        <label>Reduce the economic burden of enterprises</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q22" value="Increase the income of employees">
+        <label>Increase the income of employees</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q22" value="Other">
+        <label>Other</label>
+        <input type="text" name="Q22" placeholder="Please specify" size="50">
+      </div>
+  
+      <p><b class="black-bold">
+        5. What do you think should be the source of funds for UBI&WS? </b>
+      </p>
+      <div>
+        <input type="checkbox" name="Q23" value="government（tax increase)">
+        <label>government（tax increase)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q23" value="budget redistribution">
+        <label>budget redistribution</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q23" value="utilization of public resources(for example, mineral resources, etc.)">
+        <label>utilization of public resources(for example, mineral resources, etc.)</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q23" value="donations and charitable organizations">
+        <label>donations and charitable organizations</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Q23" value="Other">
+        <label>Other</label>
+        <input type="text" name="Q23" placeholder="Please specify" size="50">
+      </div>
+  
+      <p><b class="black-bold">
+        6. Do you support UBI&WS? </b>
+      </p>
+    <div>
+      <input type="radio" name="Q24" value="Yes">
+      <label>Yes</label>
+    </div>
+    <div>
+      <input type="radio" name="Q24" value="No">
+      <label>No</label>
+    </div>
+
+{% endif %}
+
+<!-- Part 3 Impacts of Different Tax Systems -->
+<h2>Part 3. Impacts of Different Tax Systems</h2>
+
+<p>
+  <b class="black-bold">
+    1. Under which tax system do you earn more?
+  </b>
+</p>
+<div>
+  <input type="radio" name="Q25" value="Flat Tax">
+  <label>Flat Tax</label>
+</div>
+<div>
+  <input type="radio" name="Q25" value="Progressive Tax">
+  <label>Progressive Tax</label>
+</div>
+<div>
+  <input type="radio" name="Q25" value="Same">
+  <label>Same</label>
+</div>
+
+<p>
+  <b class="black-bold">
+    2. Which tax system do you think is fairer?
+  </b>
+</p>
+<div>
+  <input type="radio" name="Q26" value="Flat Tax">
+  <label>Flat Tax</label>
+</div>
+<div>
+  <input type="radio" name="Q26" value="Progressive Tax">
+  <label>Progressive Tax</label>
+</div>
+<div>
+  <input type="radio" name="Q26" value="Same">
+  <label>Same</label>
+</div>
+
+<p>
+  <b class="black-bold">
+    3. If the government wants to support this kind of welfare system through taxes, would you support this kind of welfare system?
+  </b>
+</p>
+<div>
+  <input type="radio" name="Q27" value="Yes">
+  <label>Yes</label>
+</div>
+<div>
+  <input type="radio" name="Q27" value="No">
+  <label>No</label>
+</div>
+
+<!-- Add the Submit button -->
+<input class="next" type="submit" value="Submit">
+
+</form>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       
+        
+</div>
+          
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Activity choice | SoCoLab Experiment 2023{% endblock %}
+
+{% block content %}
+
+     <h1>Preliminary results</h1>
+<h2>You are done with 12 tasks. Please review your payoff under flat tax system.</h2>
+     <p>Gross income <b class="black-bold">I</b> = {{total_gross_income1|round|int}} €</p>
+     <p>Income tax <b class="black-bold">T</b> = {{total_tax_amount1|round|int}} €</p>
+     {% if model=='UBI' %}<p>Transfer payments received from the state = {{total_transfer_amount1|round|int}} €</p>{% endif %}
+     {% if model=='WS' %}<p>Wage subsidy received from the state = {{total_subsidy_amount1|round|int}} €</p>{% endif %}
+     {% if model=='UBIWS' %}<p>Amount received from the state = {{(total_subsidy_amount1 + total_transfer_amount1)|round|int}} €</p>{% endif %}
+     <p>Payoff <b class="black-bold">𝜋</b>=: {{total_net_income1|round|int}} €</p>
+    <br>
+     <p>Now there comes one more round!</p>
+     <p><a href="/model2">
+        <button class="next" type="button">Proceed</button>
+    </a> 
+    </p>
+
+{% endblock %}

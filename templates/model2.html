@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}Model description | SoCoLab Experiment 2023 {% endblock %}
+
+
+{% block content %}
+<h1>Social Model Description - Round 2</h1>
+    
+<p>You are a member of the society of {{group_size}} individuals where everyone is engaged in 4 types of activities:</p>
+<table>
+    <tr>
+        <td><b>Paid complex work</b>
+            <br>Multiplication within one hundred ({{wage_high}}€/month)</td>
+        <td><b>Paid simple work</b> 
+            <br>Addition within ten ({{wage_low}}€/month)</td>
+    </tr>
+    <tr>
+        <td><b>Unpaid work</b>
+            <br> Choices of 2 scenarios for unpaid work in reality
+        </td>
+        <td><b>Not working</b>
+            <br>Enjoy a landscape photo
+        </td>
+    </tr>
+</table>
+
+<p>If you make a mistake in maths tasks, you will receive only a <b>half of wage</b>. You can decide your work choice for each of 12 months per year (h = completed tasks).</p>
+
+<p>In this round of the game, there will be <b>progressive tax scheme</b>, that will be applied to the wages of the {{number_of_questions_per_stage}} tasks.</p>
+
+{% if model=="UBI" %}
+
+<table>
+    <caption>Example with an income {{(wage_high * number_of_questions_per_stage)|round|int }} €</caption>
+    <tr>
+        <th>Tax zone</th>
+        <th>Portion of taxable income</th>
+        <th>Tax rate</th>
+        <th>Maximum tax</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0 - {{cutoff_income_high}} €</td>
+        <td>{{(progressive_tax_rate_low*100)|round|int}}%</td>
+        <td>{{(cutoff_income_high*progressive_tax_rate_low)|round|int}} €</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>{{cutoff_income_high}} - {{ wage_high*number_of_questions_per_stage }} €</td>
+        <td>{{(progressive_tax_rate_high*100)|round|int}}%</td>
+        <td>{{((wage_high*number_of_questions_per_stage-cutoff_income_high)*progressive_tax_rate_high)|round|int}} €</td>
+    </tr>  
+    <tr>
+        <td>&nbsp;</td>
+        <td><b>Total tax amount</b></td>
+        <td>&nbsp;</td>
+        <td><b>{{(cutoff_income_high*progressive_tax_rate_low+diff_cutoff_income_high_to_wage_high*progressive_tax_rate_high)|round|int}} €</b></td>
+    </tr>
+</table>
+
+<p>Each month you will receive a fixed payment (G) of <b>{{amount_UBI}}€</b> from the state regardless of your involvement in paid work.
+</p>
+
+<p>The gross income I, payoff 𝜋, and income tax T from the first round of the game will be presented after completing {{number_of_questions_1_stage}} tasks.</p>
+
+{% elif model=="WS" %}
+<p>Note: Taxed are only applied on the part where <b>payoff exceeds</b> {{cutoff_income_low}} € ({{cutoff_income_low}} € is the tax threshold), which is approximately equal to choosing 7 simple work tasks in this round of the game.</p>
+
+<p>In addition to your wage from paid work the state gives you a {{(subsidy_rate_WS * 100)|int}}% subsidy (s) each time when you choose paid work.</p>
+
+<table>
+    <caption><b class="black-bold">Example with an income {{(wage_high * number_of_questions_per_stage)|round|int }} €</b></caption>
+    <tr>
+        <th>Tax zone</th>
+        <th>Portion of taxable income</th>
+        <th>Tax rate</th>
+        <th>Maximum tax</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0 - {{cutoff_income_low}} €</td>
+        <td>0 %</td>
+        <td>0 €</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>{{cutoff_income_low}} - {{cutoff_income_high}} €</td>
+        <td>{{(progressive_tax_rate_low*100)|round|int}}%</td>
+        <td>{{((cutoff_income_high-cutoff_income_low)*progressive_tax_rate_low)|round|int}} €</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>{{cutoff_income_high}} - {{ wage_high*number_of_questions_per_stage }} €</td>
+        <td>{{(progressive_tax_rate_high*100)|round|int}}%</td>
+        <td>{{((wage_high*number_of_questions_per_stage-cutoff_income_high)*progressive_tax_rate_high)|round|int}} €</td>
+    </tr>  
+    <tr>
+        <td>&nbsp;</td>
+        <td><b>Total tax amount</b></td>
+        <td>&nbsp;</td>
+        <td><b>{{((cutoff_income_high-cutoff_income_low)*progressive_tax_rate_low+diff_cutoff_income_high_to_wage_high*progressive_tax_rate_high)|round|int}} €</b></td>
+    </tr>
+</table>
+
+<p>The gross income I, payoff 𝜋, and income tax T from the first round of the game will be presented after completing {{number_of_questions_1_stage}} tasks.</p>
+
+{% else %}
+
+<p>Each month you will receive a fixed payment (G) of <b>{{amount_UBIWS}}€</b> from the state regardless of your involvement in paid work. Additionally, you would receive a wage subsidy (s) of <b>{{(subsidy_rate_UBIWS*100)|int}}%</b> from the state based on the income from paid work.
+</p>
+
+<table>
+    <caption>Example with an income {{(wage_high * number_of_questions_per_stage)|round|int }} €</caption>
+    <tr>
+        <th>Tax zone</th>
+        <th>Portion of taxable income</th>
+        <th>Tax rate</th>
+        <th>Maximum tax</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0 - {{cutoff_income_low}} €</td>
+        <td>0 %</td>
+        <td>0 €</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>{{cutoff_income_low}} - {{cutoff_income_high}} €</td>
+        <td>{{(progressive_tax_rate_low*100)|round|int}}%</td>
+        <td>{{((cutoff_income_high-cutoff_income_low)*progressive_tax_rate_low)|round|int}} €</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>{{cutoff_income_high}} - {{ wage_high*number_of_questions_per_stage }} €</td>
+        <td>{{(progressive_tax_rate_high*100)|round|int}}%</td>
+        <td>{{((wage_high*number_of_questions_per_stage-cutoff_income_high)*progressive_tax_rate_high)|round|int}} €</td>
+    </tr>  
+    <tr>
+        <td>&nbsp;</td>
+        <td><b>Total tax amount</b></td>
+        <td>&nbsp;</td>
+        <td><b>{{((cutoff_income_high-cutoff_income_low)*progressive_tax_rate_low+diff_cutoff_income_high_to_wage_high*progressive_tax_rate_high)|round|int}} €</b></td>
+    </tr>
+</table>
+
+<p>The gross income I, payoff 𝜋, and income tax T from the first round of the game will be presented after completing {{number_of_questions_1_stage}} tasks.</p>
+
+{% endif %}
+<p><a href="/choice">
+    <button class="next" type="button">To work</button>
+</a> 
+</p>
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Change model{% endblock %}
+{% block content %}
+
+<h1 class="title">Change model</h1>
+
+<h2>Your current model is: {{model}}</h2>
+
+<form method="POST">
+    <p>Choose model:</p>
+    <button class="red" name="UBI" type="submit">UBI</button>
+    <button class="red" name="WS" type="submit">WS</button>
+    <button class="red" name="UBIWS" type="submit">UBIWS</button>
+</form>
+
+{% endblock %}

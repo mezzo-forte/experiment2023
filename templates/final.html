@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Final results{% endblock %}
+{% block content %}
+
+
+    <h1>Final results</h1>
+
+    <p>You have successfully coped with the tasks!</p>
+
+    <h2>Under flat tax system</h2>
+    <p>Gross income <b class="black-bold">I</b> = {{total_gross_income1|round|int}} €</p>
+    <p>Income tax <b class="black-bold">T</b> = {{total_tax_amount1|round|int}} €</p>
+    {% if model=='UBI' %}<p>Transfer payments received from the state = {{total_transfer_amount1|round|int}} €</p>{% endif %}
+    {% if model=='WS' %}<p>Wage subsidy received from the state = {{total_subsidy_amount1|round|int}} €</p> {% endif %}
+    {% if model=='WS' %}<p>Amount received from the state = {{(total_subsidy_amount1 + total_transfer_amount1)|round|int}} €</p> {% endif %}
+    <p>Payoff <b class="black-bold">𝜋</b>=: {{total_net_income1|round|int}} €</p>
+
+    <h2>Under progressive tax system</h2>
+    <p>Gross income <b class="black-bold">I</b> = {{total_gross_income2|round|int}} €</p>
+    <p>Income tax <b class="black-bold">T</b> = {{total_tax_amount2|round|int}} €</p>
+    {% if model=='UBI' %}<p>Transfer payments received from the state = {{total_transfer_amount2|round|int}} €</p>{% endif %}
+    {% if model=='WS' %}<p>Wage subsidy received from the state = {{total_subsidy_amount2|round|int}} €</p>{% endif %}
+    {% if model=='WS' %}<p>Amount received from the state = {{(total_subsidy_amount2 + total_transfer_amount2)|round|int}} €</p>{% endif %}
+    <p>Payoff <b class="black-bold">𝜋</b>=: {{total_net_income2|round|int}} €</p>
+
+     
+    <p>Now there is final step — a questionnaire!</p>
+
+
+<p><a href="/questionnaire">
+    <button class="next" type="button">To questionnaire</button>
+</a> 
+</p>
+<!-- 
+    <div class="buttons">
+        <a href="/model2" class="button is-info">Next</a>
+    </div> -->
+
+ 
+
+{% endblock %}

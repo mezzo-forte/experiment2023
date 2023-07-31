@@ -1,0 +1,43 @@
+{
+  "Subject": "DA52ON9Kry",
+  "Task_id": 7,
+  "Correct": "Correct!",
+  "Group_number_for_model": 2,
+  "Income1": {
+    "Earned_income": 2500,
+    "Gross_income": 2750.0,
+    "Total_earned_income": 16500,
+    "Total_gross_income": 18150.0,
+    "Total_net_income": 18150.0,
+    "Total_tax_amount": 0.0,
+    "Total_taxable_income": 16500
+  },
+  "Income2": {
+    "Earned_income": 0,
+    "Gross_income": 0,
+    "Total_earned_income": 0,
+    "Total_gross_income": 0,
+    "Total_net_income": 0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Last_task": "Simple",
+  "Model": "WS",
+  "Total_income": {
+    "Total_earned_income": 0,
+    "Total_gross_income": 0,
+    "Total_net_income": 0,
+    "Total_tax_amount": 0,
+    "Total_taxable_income": 0
+  },
+  "Active_part": 1,
+  "Complex_part1": 2,
+  "Complex_part_1_0": "444",
+  "Complex_part_1_1": "4646",
+  "Simple_part1": 5,
+  "Simple_part_1_2": "12",
+  "Simple_part_1_3": "7",
+  "Simple_part_1_4": "3",
+  "Simple_part_1_5": "8",
+  "Simple_part_1_6": "15"
+}

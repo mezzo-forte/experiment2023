@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Activity choice | SoCoLab Experiment 2023{% endblock %}
+
+{% block content %}
+
+    <h1>Choosing activity for this month</h1>
+    
+{% if task_id == 0 and active_part == 1 %}<p>Once you make a choice, you can't change it for this particular task. You can switch to another type of activity in the next month.</p>
+{% endif %}
+<p>{% if last_task== 'Complex' or last_task=='Simple' %} {% if correctness=="Correct!" %}<b class="black-bold" style="color:forestgreen">{{correctness}}</b>{% elif correctness=='Incorrect!' %}<b class="black-bold" style="color:tomato">{{correctness}}</b>{% endif %} This month you have <b class="black-bold">earned</b> {{earned_income|round|int}} € {% endif %}</p>
+
+<div class="income">Your current total <b class="black-bold">gross</b> income: {{total_gross_income|round|int}} €</div>
+<div class="income">Your current total <b class="black-bold">net</b> income: {{total_net_income|round|int}} €</div>
+<div class="income">Your current total <b class="black-bold">taxable</b> income: {{total_taxable_income|round|int}} €</div>
+<div class="income">Your current total <b class="black-bold">tax</b> amount: {{total_tax_amount|round|int}} €</div>
+
+<p><b class="black-bold">Model: </b>{% if model=="UBI" %}
+    Each month you receive a transfer of {{amount_UBI}} Euro. If you chose paid work — you also receive what you've earned.
+    {% elif model=="WS" %}
+    If you chose paid work — you receive your wage and, in addition, a benefit of {{(subsidy_rate_WS*100)|round|int}}% of your wage.
+
+    {% elif model=="UBIWS" %}
+    Each month you receive a transfer of {{amount_UBIWS|round|int}} Euro. If you chose paid work — you also receive your wage and, in addition, a benefit of {{(subsidy_rate_UBIWS*100)|round|int}}% of your wage.
+    {% endif %}</p>
+<p><b class="black-bold">Tax rules:</b> 
+    {% if model=="UBI" and active_part==1 %}<b>Flat tax rate {{(flat_tax_rate*100)|round|int}}%.</b> Taxable income (wage * months of work) is taxed with {{(flat_tax_rate*100)|round|int}}%. There are no tax exempts.
+    {% elif model=="UBI" and active_part==2 %}
+    <b>Progressive tax.</b> Part of taxable income (wage * months of work) below {{cutoff_income_high}} is taxed with {{(progressive_tax_rate_low*100)|round|int}}%. Another part of taxable income higher than {{cutoff_income_high}} is taxed with {{(progressive_tax_rate_high*100)|round|int}}%
+
+    {% elif model=="WS" and active_part==1 %}
+    <b>Flat tax rate. </b> Part of taxable income (wage * months of work) up to {{cutoff_income_low}} is not taxed if wage * months of work) is below {{cutoff_income_low}}. Another part of taxable income is taxed with {{(flat_tax_rate*100)|round|int}}%, if wage * months of work is above {{cutoff_income_low}}
+
+    {% elif model=="WS" and active_part==2 %}
+    <b>Progressive tax.</b> Part of taxable income (wage * months of work) is not taxed if wage * months of work is below {{cutoff_income_low}} , another part of taxable income is taxed with {{(progressive_tax_rate_low*100)|round|int}}%, if wage * months of work lies  between {{cutoff_income_low}} and {{cutoff_income_high}}. And a corresponding part of taxable income is taxed with {{(progressive_tax_rate_high*100)|round|int}}% if wage * months of work is above {{cutoff_income_high}}
+
+    {% elif model=="UBIWS" and active_part==1 %}
+    <b>Flat tax rate.</b> Taxable income (wage * months of work) is not taxed if wage * months of work is below {{cutoff_income_low}}. If wage * months of work is above {{cutoff_income_low}}, taxable income is taxed with {{(flat_tax_rate*100)|round|int}}%  
+    
+    {% elif model=="UBIWS" and active_part==2 %}
+    <b>Progressive tax.</b> Part of taxable income (wage * months of work) is not taxed if wage * months of work is below {{cutoff_income_low}} , another part of taxable income between {{cutoff_income_low}} and {{cutoff_income_high}} is taxed with {{(progressive_tax_rate_low*100)|round|int}}% when wage * months of work lies in this interval. And a part of taxable income is taxed with {{(progressive_tax_rate_high*100)|round|int}}% if wage * months of work is above {{cutoff_income_high}}</p>
+    {% endif %}
+<h2>Available tasks:</h2>
+
+<p><b class="black-bold">Complex paid work:</b> Multiplication within one hundred ({{wage_high}} €/month) is complex maths tasks (e.g.: 15 * 21 ). You receive <b>full income for correctly</b> solved tasks. You receive <b>half of income for incorrectly</b> solved tasks.</p>
+<p><b class="black-bold">Simple paid work:</b> Addition within ten ({{wage_low}} €/month) is simple maths tasks (e.g.: 5 + 2 ). You receive <b>full income for correctly</b> solved tasks. You receive <b>half of income for incorrectly</b> solved tasks.</p>
+<p><b class="black-bold">Unpaid work:</b> Choices of 2 scenarios for unpaid work in reality (e.g. Reading a tale for kids or take tea ceremony course)(0 €/month).</p>
+<p><b class="black-bold">No work:</b> Enjoying a landscape photo. (0 €/month)</p>
+
+<!-- <h2>What will you do this month?</h2> -->
+
+{% if task_id != 0%}<p>You have already distributed <b>{{task_id}} months</b> of activities.</p>{% endif %}
+
+<form method='POST'>
+    <input class="button choice" name="Complex" value="Paid complex work" type="submit">
+    <input class="button choice" name="Simple" value="Paid simple work" type="submit">
+    <input class="button choice" name="Unpaid" value="Unpaid work" type="submit">
+    <input class="button choice" name="Nowork" value="No work" type="submit">
+</form>
+<!-- 
+    <div class="buttons">
+        <a href="/paid" class="button is-info">Paid work</a>
+    </div>
+
+    <div class="buttons">
+        <a href="/unpaid" class="button is-info">Unpaid work</a>
+    </div>
+
+    <div class="buttons">
+        <a href="/nowork" class="button is-info">No work</a>
+    </div> -->
+
+{% endblock %}

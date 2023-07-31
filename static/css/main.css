@@ -1,0 +1,156 @@
+ @font-face {
+    font-family: "Bureausans";
+    src: url("fonts/bureausans-regular.woff2") format('woff2');
+  }
+  
+ @font-face {
+    font-family: "Bureausans";
+    src: url("fonts/bureausans-bold.woff2") format('woff2');
+    font-weight: bold;
+  }
+  
+ @font-face {
+    font-family: "Bureauserif";
+    src: url("fonts/bureauserif-regular.woff2") format('woff2');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "Bureauserif";
+    src: url("fonts/bureauserif-regular.woff2") format('woff2');
+
+  }
+  
+  @font-face {
+    font-family: "Bureauserif";
+    src: url("fonts/bureauserif-italic.woff2") format('woff2');
+    font-style: italic;
+  }
+
+  body {
+      font-family: "Bureauserif", Georgia, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  .income {
+    font-size: 18px;
+    line-height: 24px
+  }
+  .container {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .container.box {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 24px
+  }
+
+  .list{
+    margin-top: -1em
+  }
+  
+  b {
+    color: #d36480
+  }
+
+  .black-bold {
+    color:black; 
+    font-family:'Bureausans'; 
+    font-weight: bold
+
+  }
+
+  h1 {
+    font-family: "Bureausans", Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #1f609e;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+
+  h2 {
+    font-family: "Bureausans", Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 2em;
+    color: #1F609E
+  }
+.next {
+    background-color: #1F609E;
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Bureausans";
+    border-radius: 12px;
+    margin-top: 1em
+    
+  }
+  .choice {
+    background-color: #1F609E;
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Bureausans";
+    border-radius: 12px;
+    margin-top: 1em;
+    margin-right: 0.5em
+    
+  }
+  .red {
+    background-color:crimson;
+    border: none;
+    color: white;
+    padding: 10px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Bureausans";
+    border-radius: 12px;
+    margin-top: 2em
+    
+  }
+  table {
+    border-collapse: collapse;
+    margin-bottom: 3em
+}
+
+th {
+    border: 1px solid lightgray;
+    padding: 16px;
+    color: #d36480
+}
+td {
+  border: 1px solid lightgray;
+  padding: 16px;
+}
